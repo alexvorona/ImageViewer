@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:model="clr-namespace:PhotoLibrary.Model">
+
+   <DataTemplate DataType="{x:Type model:Photo}">
+        <Grid Margin="5" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Rectangle Fill="White" >
+                <Rectangle.Effect>
+                    <DropShadowEffect Opacity="0.5" ShadowDepth="0" />
+                </Rectangle.Effect>
+            </Rectangle>
+            <Border Grid.Row ="0" Background="White" BorderBrush="White" BorderThickness="5" >
+                <Image Stretch="Uniform" Source="{Binding Path=Thumbnail, Mode=OneWay, IsAsync=True}"/>
+            </Border>
+            <Label Grid.Row ="1" Content="{Binding Path}"/>
+        </Grid>
+    </DataTemplate>
+   
+</ResourceDictionary>

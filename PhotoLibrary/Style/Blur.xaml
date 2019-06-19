@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style TargetType="{x:Type FrameworkElement}" x:Key="Blur">
+        <Setter Property="Effect" Value="{x:Null}"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding BlurMode}" Value="True">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <BlurEffect Radius="5" KernelType="Box" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+   
+</ResourceDictionary>
